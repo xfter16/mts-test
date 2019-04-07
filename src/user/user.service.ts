@@ -11,6 +11,21 @@ export class UserService {
   ) {}
 
   async findAll(): Promise<User[]> {
-    return await this.userRepository.find();
+    return this.userRepository.find()
+              .then(res => {
+                // tslint:disable-next-line:no-console
+                console.log('user: ', res);
+                return res;
+              });
+  }
+
+  async create(user: User): Promise<User|null> {
+    const createdUser = await this.userRepository.create(user);
+    return this.userRepository.save(createdUser)
+            .then(res => {
+              // tslint:disable-next-line:no-console
+              console.log('user: ', res);
+              return res;
+            });
   }
 }

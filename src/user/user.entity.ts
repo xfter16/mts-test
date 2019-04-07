@@ -5,15 +5,15 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({length: 200, nullable: false})
   login: string;
 
-  @Column()
+  @Column('timestamp', { precision: 3, default: () => 'CURRENT_TIMESTAMP(3)' })
   createdAt: Date;
 
-  @Column()
+  @Column('timestamp', { precision: 3, default: () => 'CURRENT_TIMESTAMP(3)', onUpdate: 'CURRENT_TIMESTAMP(3)'})
   updatedAt: Date;
 
-  @Column()
+  @Column('timestamp', { default: () => null, nullable: true })
   deletedAt: Date;
 }
