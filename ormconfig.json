@@ -1,0 +1,14 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "sergey",
+  "password": "vicxfter",
+  "database": "locale_test",
+  "entities": ["src/**/**.entity{.ts, .js}"],
+  "synchronize": true,
+  "cli": {
+    "migrationsDir": "./migrations",
+    "entitiesDir": "src/**/**.entity{.ts, .js}"
+  }
+}
