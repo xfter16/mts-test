@@ -61,7 +61,7 @@ $ npm run test:cov
 ```
 
 ## Swagger
-/api
+```/api```
 
 ## Support
 
