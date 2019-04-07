@@ -1,7 +1,6 @@
 import { Controller, Get, Req } from '@nestjs/common';
-import { Observable, of } from 'rxjs';
-import { UserService } from 'src/services/user.service';
 import { User } from 'src/models/user.model';
+import { UserService } from './user.service';
 
 @Controller('user')
 export class UserController {
